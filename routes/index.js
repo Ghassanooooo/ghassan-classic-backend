@@ -8,15 +8,11 @@ const router = express.Router();
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { title: "Ghassan classic" });
-});
-
-router.get("/test", function(req, res, next) {
   fs.readFile(
     path.join(__dirname, "..", "documents", "data", "workoutData.json"),
     (err, data) => {
       let workoutJsonData = JSON.parse(data);
-      console.log(workoutJsonData);
+      res.render("index", workoutJsonData);
     }
   );
 });
