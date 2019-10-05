@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= tittle %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      body {
+        padding: 20px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        direction: rtl;
+      }
+      .headerBoxes {
+      }
+      .box,
+      .headerBoxes {
+        display: inline-block;
+        width: 32%;
+      }
+      .firstDay,
+      .secondDay,
+      .thirdDay,
+      .sixthDay,
+      .seventhDay {
+        width: 97.7%;
+      }
+
+      .forthDay,
+      .fifthDay {
+        width: 48.4%;
+      }
+      .textCenter {
+        text-align: center;
+      }
+      .setHeight {
+        height: 292px;
+      }
+      .boxBorder {
+        border: 2px solid;
+      }
+      .margenBottom {
+        margin-bottom: 6px;
+      }
+      .title {
+      }
+      h4 {
+        margin: 4px 0;
+      }
+      .sites {
+        text-decoration: underline;
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p class="classic">Welcome to <%= title %></p>
-    <div class="alert alert-primary" role="alert">
-      A simple primary alert—check it out!
+    <div>
+      <%for (var headerData of ['name/wight', 'date', 'logo']) {%>
+      <div class="headerBoxes margenBottom textCenter"><%= headerData %></div>
+      <%}%>
+    </div>
+
+    <div class="firstDay boxBorder setHeight margenBottom">
+      <h4 class="textCenter"><%=firstDay.tittle%></h4>
+      <ul>
+        <%for (var firstDayWorkout of firstDay.exercises){%>
+        <li class="">
+          <%= firstDayWorkout %> <span class="sites"><%=sites%></span>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+    <div class="secondDay boxBorder setHeight margenBottom">
+      <h4 class="textCenter"><%=secondDay.tittle%></h4>
+      <ul>
+        <%for (var secondDayWorkout of secondDay.exercises){%>
+        <li class=""><%= secondDayWorkout %></li>
+        <%}%>
+      </ul>
+    </div>
+    <div class="thirdDay textCenter margenBottom">
+      <h4 class="textCenter"><%=thirdDay.tittle%></h4>
+    </div>
+    <div>
+      <%for (var workoutData of [fifthDay, sixthDay]) {%>
+      <div class="box boxBorder setHeight margenBottom forthDay fifthDay">
+        <h4 class="textCenter"><%= workoutData.tittle %></h4>
+        <ul>
+          <%for (var exercise of workoutData.exercises){%>
+          <li class=""><%= exercise %></li>
+          <%}%>
+        </ul>
+      </div>
+      <%}%>
+    </div>
+    <div class="boxBorder setHeight margenBottom sixthDay">
+      <h4 class="textCenter"><%=sixthDay.tittle%></h4>
+      <ul>
+        <%for (var sixthDayWorkout of sixthDay.exercises){%>
+        <li class=""><%= sixthDayWorkout %></li>
+        <%}%>
+      </ul>
+    </div>
+    <div class="textCenter seventhDay">
+      <h4 class="textCenter"><%=seventhDay.tittle%></h4>
     </div>
   </body>
 </html>

@@ -1,0 +1,40 @@
+{
+  "tittle": "Ghassan Classic",
+  "sites": "12 10 8 6",
+  "firstDay": {
+    "tittle": "first Day",
+    "exercises": [
+      "ترايسبس سيقان اله زوجي",
+      "دبني كامل متوسط",
+      "لك بريس الامشاط للداخل",
+      "ديدلفت روماني",
+      "كيل سيقان معا",
+      "ركل ارجل للخلف مفرد اله",
+      "كولف جالس الامشاط للداخل",
+      "معده طحمن اسفل"
+    ]
+  },
+
+  "secondDay": {
+    "tittle": "second Day",
+    "exercises": ["", "", "", "", "", "", "", "", "", ""]
+  },
+  "thirdDay": {
+    "tittle": "third Day"
+  },
+  "forthDay": {
+    "tittle": "forth Day",
+    "exercises": ["", "", "", "", "", "", "", "", "", ""]
+  },
+  "fifthDay": {
+    "tittle": "fifth Day",
+    "exercises": ["", "", "", "", "", "", "", "", "", ""]
+  },
+  "sixthDay": {
+    "tittle": "sixth Day",
+    "exercises": ["", "", "", "", "", "", "", "", "", ""]
+  },
+  "seventhDay": {
+    "tittle": "seventh Day"
+  }
+}
