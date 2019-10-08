@@ -53,7 +53,8 @@
   </head>
   <body>
     <div>
-      <%for (var headerData of ['name/wight', 'date', 'logo']) {%>
+      <%for (var headerData of [`wight: ${weight} kg | name:${name}`, 'date',
+      'logo']) {%>
       <div class="headerBoxes margenBottom textCenter"><%= headerData %></div>
       <%}%>
     </div>

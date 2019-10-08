@@ -17,7 +17,14 @@ router.get("/", function(req, res, next) {
   );
 });
 
-router.get("/download", function(req, res, next) {
+router.get("/download", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "fitness-program.pdf"));
+});
+
+router.post("/purchasing-program-user-data", function(req, res, next) {
+  //user Data
+  console.log(req.body);
+  const { name, weight } = req.body;
   fs.readFile(
     path.join(__dirname, "..", "documents", "data", "workoutData.json"),
     (err, dataJson) => {
@@ -25,7 +32,7 @@ router.get("/download", function(req, res, next) {
       console.log(workoutJsonData);
       ejs.renderFile(
         path.join(__dirname, "..", "views", "index.ejs"),
-        workoutJsonData,
+        { ...workoutJsonData, name, weight },
         (err, data) => {
           let options = {
             height: "11.25in",
@@ -38,7 +45,12 @@ router.get("/download", function(req, res, next) {
             }
           };
           pdf.create(data, options).toFile("fitness-program.pdf", err => {
-            res.sendFile(path.join(__dirname, "..", "fitness-program.pdf"));
+            if (err) {
+              console.log(err);
+              res.json({ success: false });
+            }
+            res.json({ success: true });
+            console.log("the pdf file created");
           });
         }
       );
